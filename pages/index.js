@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Web3 from 'web3';
 
 
@@ -25,26 +25,9 @@ function App() {
 
       };
 
-
-
-      // const handleContract = async (e) => {
-        
-      //   // setContractData(fetch);
-      // };
-  
-
-   
-
-    // const web3 = new Web3("https://mainnet.infura.io/v3/");
-
     const handleContract =  () => {
 
 
-//       const c = new web3.eth.Contract(null, contractAddress);
-//       const fetch = await c.methods.getPastEvents('allEvents', { fromBlock: 0, toBlock: 'latest' }).call();
-//       const a= fetch.then((e)=>console.log(e));
-//       console.log(a);
-// }
       web3.eth.getBalance(contractAddress, (error, result) => {
         if (error) {
           // console.log(error);
@@ -56,65 +39,16 @@ function App() {
       });
 
     }
-      // web3.eth.getCode(contractAddress, (error, res) => {
-      //   if (error) {
-      //     console.log(error);
-      //   } else {
-      //     // // console.log(res);
-      //     // const transactionHash = web3.utils.sha3(contractAddress);
-          // console.log(`Transaction hash: ${transactionHash}`);
 
-          // web3.eth.getTransactionReceipt('0xfbf68ad353eaf0b0eee678d043d8c40f8a4f413db0df77a8afd30e0aeda8b1c0')
-          // .then((r) => {
-          //   if (r) {
-          //     console.log(r);
-          //   } else {
-          //     console.log("receipt not available");
-          //   }
-          // })
-          // .catch((e) => {
-          //   console.log(e);
-          // });
+    useEffect(() => {
 
+    },[])    // fetch latest transactions
 
+    useEffect(() => {
 
-
-
-
-      
-          
-        //  const c=web3.eth.getTransactionReceipt(creationTransactionHash);
-        //  alert(c.blockNumber);
-            // if (error) {
-            //   console.log(error);
-            // } else if (!receipt) {
-            //   console.log(`Transaction receipt not found for hash: ${creationTransactionHash}`);
-            // } else {
-            //   console.log(`Block number: ${receipt.blockNumber}`);
-            // }
-          
-        // }
-      // });
+    },[])    // fetch lastest blocks 
 
     
-
-    
-    //     if (err) {
-    //       console.error(err);
-    //       setContractData(null);
-    //     } else {
-    //       console.log(result);
-    //       setContractData(result);
-    //     }
-    //   });
-    // };
-      // }
-
-
-
-
-
-
 
     return (
       <>
